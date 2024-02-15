@@ -15,6 +15,7 @@ export class DropdownComponent {
 
   @Output() valueChange = new EventEmitter()
 
+  // handling change event of select 
   changeValue(){
     this.valueChange.emit(this.selectedValue)
   }

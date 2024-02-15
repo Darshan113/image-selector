@@ -16,20 +16,25 @@ import { Image } from './image';
 export class ImageSelectorComponent implements OnInit {
    images : Image[] = []
    selectedImages : Image[] = []
-   @Input()
-  selectionLimitVal!: number;
+
+   @Input() selectionLimitVal!: number;
+
   loading: boolean = true; 
   totalImagesLoaded: number = 0;
    
+
    constructor(private imageDataService : ImageDataService) {}
    
+
    ngOnInit(): void {
+    // setting images data
       this.imageDataService.getImages().subscribe(data => {
         this.images = data
       })
   }
   
 
+  // handing click event on each images
   onSelect(image : Image){
       if (this.selectedImages.includes(image)) {
         this.selectedImages = this.selectedImages.filter(selectedImage => selectedImage != image);
@@ -41,6 +46,7 @@ export class ImageSelectorComponent implements OnInit {
     
   }
 
+  // to  see  if all images are loaded or not
   imageLoaded() {
     this.totalImagesLoaded++;
     if (this.totalImagesLoaded === this.images.length) {

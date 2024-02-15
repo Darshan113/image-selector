@@ -12,7 +12,10 @@ interface ResponseData {
 })
 export class ImageDataService {
   imagesUrl = './assets/images.json'
+
   constructor(private http : HttpClient) { } 
+
+  
   getImages() : Observable<Image[]> {
     return this.http.get<ResponseData>(this.imagesUrl).pipe(
       map(response => response.images)

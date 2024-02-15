@@ -16,6 +16,7 @@ export class AppComponent {
   
   selectionLimit : number = 5
 
+  // handling emitted event 
   changeValue(value : number){
     this.selectionLimit = value
   }
