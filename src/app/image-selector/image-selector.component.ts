@@ -31,13 +31,14 @@ export class ImageSelectorComponent implements OnInit {
   
 
   onSelect(image : Image){
-    if (this.selectionLimitVal !== undefined && this.selectionLimitVal > this.selectedImages.length) {
       if (this.selectedImages.includes(image)) {
         this.selectedImages = this.selectedImages.filter(selectedImage => selectedImage != image);
       } else {
-        this.selectedImages.push(image);
+        if (this.selectionLimitVal !== undefined && this.selectionLimitVal > this.selectedImages.length) {
+          this.selectedImages.push(image);
+        }
       }
-    }
+    
   }
 
   imageLoaded() {
