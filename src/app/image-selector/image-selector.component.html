@@ -1,0 +1,11 @@
+<div class="image-container">
+    <div *ngIf="loading" class="loading-spinner">
+      Loading...
+    </div>
+    
+<div class="image-container">
+    <div *ngFor="let image of images" (click)="onSelect(image)" [ngClass]="{ 'selected': selectedImages.includes(image) }">
+      <img [src]="image.url" alt="Image" (load)="imageLoaded()">
+      <div class="count" *ngIf="selectedImages.includes(image)">{{ selectedImages.indexOf(image) + 1 }}</div>
+    </div>
+</div>
