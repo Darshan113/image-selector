@@ -1,3 +1,15 @@
+.dropdown-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 70vw;
+}
+
+.selectDropdown {
+    margin-bottom: 10px;
+}
+  
 select {
     padding: 8px 12px;
     font-size: 16px;
@@ -17,5 +29,12 @@ select {
   select:focus {
     border-color: #00f;
     box-shadow: 0 0 5px #00f;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .dropdown-container {
+      flex-direction: column;
+    }
   }
   

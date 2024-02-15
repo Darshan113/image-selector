@@ -1,10 +1,6 @@
-<div>
-    <select [(ngModel)]="selectedValue" (change)="changeValue()">
-      <option *ngFor="let value of dropdownValues" [value]="value">{{ value }}</option>
-    </select>
-
+<div class="dropdown-container">
     <!-- bootstrap dropdown  -->
-    <div class="dropdown">
+    <div class="dropdown ">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Dropdown
         </button>
@@ -12,5 +8,13 @@
           <li *ngFor="let value of dropdownValues" ><a class="dropdown-item" href="#">{{value}}</a></li>
         </ul>
       </div>
+      
+    <div class="selectDropdown">
+        <p>Set limit of Image Selection</p>
+        <select [(ngModel)]="selectedValue" (change)="changeValue()">
+          <option *ngFor="let value of dropdownValues" [value]="value">{{ value }}</option>
+        </select>
+    </div>
+
 </div>
 
